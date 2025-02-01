@@ -1,0 +1,52 @@
+
+#achievements {
+  grid-template-rows: 90vh 10vh;
+  font-size: 19vmin;
+  color: var(--main-font-color);
+  font-weight: 440;
+}
+
+#achievements * {
+  display: inline;
+  color: var(--main-font-color);
+}
+
+#achievements-one {
+  justify-self: center;
+  align-self: center;
+  padding: 0 10vw;
+}
+
+#value {
+  border: none;
+  outline: none;
+  width: 2ch;
+  height: 1.5ex;
+  font-size: 185%;
+  background: none;
+  /*vertical-align: center;*/
+  /*height: 1.5ex;*/
+}
+
+#footer {
+  overflow: hidden;
+  width: 100%;
+}
+
+#footer div {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+

@@ -1,0 +1,150 @@
+---
+
+
+---
+<div class="set-sizes section">
+    <div class="line" id="line-2"></div>
+    <div id="grid-foreground" class="grid">
+        <div id="grid-foreground-slogan-a" class="grid-foreground-slogan">
+            <div>All Popular</div>
+        </div>
+        <div id="grid-foreground-slogan-b" class="grid-foreground-slogan flex">
+            <div id="grid-foreground-slogan-bb">Some moments, opportunities, players and sports that we are proud
+                of!
+            </div>
+            <div id="grid-foreground-slogan-bbb" onclick="location.href='/Sports';">
+                See All
+                <img alt="Learn More" src="./img/LM.svg">
+            </div>
+        </div>
+        <div id="grid-foreground-slogan-c" class="grid-foreground-slogan">
+            Big Sports
+        </div>
+    </div>
+    <div id="section-2" class="grid">
+
+        <div class="grid-img grid-border">
+            <img src="./img/1.webp" alt="sports1">
+            <img src="./img/2.webp" alt="sports1">
+        </div>
+
+        <div class="grid-img">
+            <img src="./img/5.webp" alt="sports2">
+            <img src="./img/16.webp" alt="sports2">
+        </div>
+
+        <div class="grid-img grid-border">
+            <img src="./img/12.webp" alt="sports3">
+            <img src="./img/10.webp" alt="sports3">
+        </div>
+
+        <div class="grid-img">
+            <img src="./img/18.webp" alt="sports4">
+            <img src="./img/25.webp" alt="sports5">
+        </div>
+    </div>
+</div>
+<style>
+    #section-2 {
+        grid-template-columns: repeat(4, 25vw);
+        grid-template-rows: 100vh;
+        background: var(--main-bg-color);
+        transition: all 0.75s ease-in-out 0.5s;
+        padding: 5% 0;
+    }
+
+    .section {
+        height: 100% !important;
+    }
+
+    .grid-img {
+        display: flex;
+        flex-flow: column nowrap;
+        /*border-right: 5px solid rgba(52, 51, 51, 0.25);*/
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .grid-img img {
+        max-width: 60%;
+        object-fit: scale-down;
+        /*margin: 15% 0;*/
+        /*filter: grayscale(100%);*/
+    }
+
+    .grid-border {
+        border-right: 2px solid rgba(52, 51, 51, 0.25);
+    }
+
+    #grid-foreground {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0);
+        padding: 5% 0;
+        transition: all 1.5s ease-in-out 1s;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        font-weight: 440;
+        justify-items: center;
+        align-items: center;
+
+    }
+
+    .grid-foreground-slogan {
+        font-size: 8vw;
+        color: var(--main-bg-color);
+        opacity: 0;
+        transition: all 1.25s cubic-bezier(0.65, 0, 0.35, 1);
+        /*white-space: nowrap;*/
+    }
+
+    #grid-foreground-slogan-a {
+        grid-column-start: 1;
+        /*grid-column-end: 2;*/
+        grid-row-start: 6;
+        /*grid-row-end: 5;*/
+    }
+
+    #grid-foreground-slogan-b {
+        margin-top: 3rem;
+        max-width: 36ch;
+        flex-flow: column nowrap;
+        font-size: 3vmin;
+        grid-column-start: 1;
+        grid-row-start: 7;
+        transition: all 1.25s cubic-bezier(0.65, 0, 0.35, 1);
+        gap: 1rem;
+        line-height: 1.5;
+    }
+
+    #grid-foreground-slogan-bbb {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 4vmin;
+        text-transform: Capitalize;
+        gap: 0.5rem;
+        margin-right: -5rem;
+        cursor: pointer !important;
+
+    }
+
+    #grid-foreground-slogan-bbb img {
+        padding: 0 1rem;
+        max-width: 64px;
+    }
+
+    #grid-foreground-slogan-c {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 7;
+    }
+
+
+    #line-2 {
+        height: 120%;
+    }
+
+
+</style>

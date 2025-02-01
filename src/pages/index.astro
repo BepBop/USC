@@ -1,0 +1,178 @@
+---
+import Head from "../components/head.astro"
+import Section1 from "../section/section-1.astro"
+import Section2 from "../section/section-2.astro"
+import Section3 from "../section/section-3.astro"
+import Section4 from "../section/section-4.astro"
+import Section5 from "../section/section-5.astro"
+---
+
+<Head/>
+<>
+    <Section1/>
+    <Section2 />
+    <Section3 />
+    <Section4 />
+    <Section5 />
+</>
+
+
+<style is:global>
+
+    @font-face {
+        font-family: 'Heebo';
+        src: url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap') format('truetype-variations');
+        font-weight: 100 1000;
+        font-display: swap;
+    }
+
+    :root {
+        --main-bg-color: snow;
+        --secondary-bg-color: darkblue;
+        --main-font-color: darkblue;
+        font-family: 'Heebo', sans-serif;
+
+        @media (width < 600px) {
+            display: none;
+        }
+
+    }
+
+    html {
+        scroll-behavior: smooth;
+
+    }
+
+    body {
+        width: 100vw !important;
+        background: var(--main-bg-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .grid {
+        display: grid;
+    }
+
+
+    .line {
+        position: absolute;
+        background: var(--main-font-color);
+        z-index: 0;
+        width: 5px;
+        height: 0;
+        left: 50%;
+    }
+
+    .section {
+        height: 100vh;
+    }
+
+</style>
+
+<script>
+
+
+    // Create observer with options
+    const observerOptions = {
+        root: null, // Use viewport as root
+        rootMargin: '0px',
+        threshold: 0.5,
+    };
+
+    // Create observer instance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const section = entry.target;
+            const sectionIndex = parseInt(section.dataset.sectionIndex);
+
+            console.log(entry.isIntersecting, section, sectionIndex)
+
+            switch (sectionIndex) {
+                case 1:
+                    // Section 1 animations
+                    const gridForeground = document.getElementById('grid-foreground');
+                    const section2 = document.getElementById('section-2');
+                    const line2 = document.getElementById('line-2');
+                    const sloganA = document.getElementById('grid-foreground-slogan-a');
+                    const sloganB = document.getElementById('grid-foreground-slogan-b');
+                    const sloganC = document.getElementById('grid-foreground-slogan-c');
+
+                    if (gridForeground && section2 && line2 && sloganA && sloganB && sloganC) {
+                        gridForeground.style.background = "rgba(0, 0, 0, 0.90)";
+                        section2.style.background = "black";
+                        line2.style.background = "whitesmoke";
+
+                        // Assume sloganA, sloganB, and sloganC are valid DOM elements.
+                        setTimeout(() => {
+                            sloganA.style.opacity = "100";
+                        }, 2000);
+
+                        setTimeout(() => {
+                            sloganB.style.opacity = "100";
+                        }, 2800);
+
+                        setTimeout(() => {
+                            sloganC.style.opacity = "100";
+                        }, 2500);
+
+                    }
+
+                    break;
+
+                case 2:
+                    // Section 2 animations
+                    const video = document.getElementsByTagName('video')[0];
+                    const button = document.getElementsByTagName('button')[0];
+
+                    if (video && button) {
+                        video.style.transform = "scale(1)";
+                    }
+                    break;
+
+                case 3:
+                    // Section 3 animations
+                    const fullElement = document.getElementById('section-4');
+                    if (fullElement) fullElement.style.animation = "mymove 2.2s ease-in-out forwards";
+
+                    break;
+
+                case 4:
+                    // Section 4 animations
+                    const elements = [
+                        {id: 'five-1', delay: '1s'},
+                        {id: 'card-head1', delay: '2s'},
+                        {id: 'five-22', delay: '1s'},
+                        {id: 'five-3', delay: '1.5s'},
+                        {id: 'five-4', delay: '1.5s'}
+                    ];
+
+                    elements.forEach(({id, delay}) => {
+                        const element = document.getElementById(id);
+                        if (element) {
+                            element.style.animation = `slide-up 1.25s cubic-bezier(0.65, 0, 0.35, 1) ${delay} forwards`;
+                        }
+                    });
+                    break;
+
+            }
+
+        });
+    }, observerOptions);
+
+    // Select all sections and observe them
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, index) => {
+        // Add data attribute for section index
+        section.dataset.sectionIndex = index.toString();
+        observer.observe(section);
+    });
+
+
+</script>

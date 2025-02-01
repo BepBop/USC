@@ -1,0 +1,118 @@
+---
+
+---
+
+<div id="section-1" class="section">
+
+
+    <div id="nav" class="flex">
+        <img alt="logo" id="logo" src="./img/Logo.svg" onclick="window.location.href = '/USC';"/>
+        <div id="nav-links">
+            <button type="button">About Us</button>
+            <button type="button">Contact Us</button>
+            <button type="button">Sports</button>
+        </div>
+    </div>
+
+    <div class="flex slogan">
+        <div>WE ARE THE BLUE</div>
+        <div>THAT BELIEVE IN</div>
+        <div id="slogan-last">YOU!</div>
+    </div>
+
+    <div class="line" id="line-1"></div>
+
+</div>
+
+<style>
+    #section-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+
+    .slogan {
+        flex-flow: column;
+        justify-content: center;
+        color: var(--main-font-color);
+        text-align: center;
+        font-size: clamp(1.5rem, 3.5vw + 3.25rem, 20rem);
+        font-weight: 770;
+        word-spacing: clamp(0.5rem, 1vw, 1rem);
+        padding: 5%;
+    }
+
+    #slogan-last {
+        font-size: 105%;
+    }
+
+    #line-1 {
+        bottom: 0;
+    }
+
+
+    #nav {
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem;
+
+        & img {
+            object-fit: scale-down;
+            height: clamp(4rem, 8vw, 5.5rem);
+            cursor: pointer;
+        }
+
+        & #nav-links {
+            display: flex;
+            height: 100%;
+            justify-content: flex-end;
+            flex: 1 1 auto;
+            margin: 0;
+            gap: 2rem;
+
+
+            button {
+                border-radius: 0;
+                border: none;
+                font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+                font-weight: 600;
+                padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+                color: var(--main-font-color);
+                background: unset;
+
+
+                &:hover {
+                    background: var(--main-font-color);
+                    color: var(--main-bg-color);
+                    cursor: pointer;
+                }
+
+            }
+
+        }
+    }
+
+
+</style>
+
+<script>
+    let a = document.querySelector("#section-1 > div.flex.slogan").offsetHeight;
+    let b = document.getElementById("nav").offsetHeight;
+    const line_1 = document.getElementById("line-1");
+    line_1.style.height = `calc(100% - ${a}px - ${b}px - 1rem)`;
+
+
+    document.querySelectorAll("#nav-links > button").forEach((button) => {
+        button.addEventListener('click', () => {
+            addSegmentAndRedirect(button.innerHTML);
+        });
+    });
+
+    function addSegmentAndRedirect(segment) {
+        window.location.href = window.location.href.replace(/\/$/, '') +
+            (window.location.href.includes(`/${segment}`) ? '' : `/${segment}`);
+    }
+
+</script>
+

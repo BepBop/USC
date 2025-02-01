@@ -1,0 +1,241 @@
+---
+---
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Urban Sports Club - About Us</title>
+    <meta name="description" content="About us page showcasing the in-progress design of Urban Sports Club.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Open Graph Metadata for SEO and Social Sharing -->
+    <meta property="og:title" content="Urban Sports Club - About Us">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="bepbop.github.io/USC/About"> <!-- Replace with your URL -->
+    <meta property="og:image" content="../img/Logo.svg">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/img/Logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../img/Logo.svg"> <!-- Favicon -->
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+
+<div id="whitewash">
+    <div id="card">
+        <div id="card-head1">
+            Inspired By You
+
+        </div>
+        <div id="card-head2">
+            What began as an opportunity to bring sports to urban masses has evolved into coaching athletes at
+            professional
+            level.
+
+            Dedicated to the best possible coaching, we proudly are at the forefront of urban sports while still
+            maintaining
+            that familiar, neighborhood feel.
+
+        </div>
+        <div id="card-head3">
+
+            Learn more about us!
+
+            <img alt="Learn More" src="../img/LM2.svg" alt="Learn More">
+        </div>
+    </div>
+</div>
+
+<ul id="background-slogan">
+    <li>You! You! You! You! You!</li>
+    <li>You! You! You! You! You!</li>
+    <li>You! You! You! You! You!</li>
+    <li>You! You! You! You! You!</li>
+    <li>You! You! You! You! You!</li>
+</ul>
+
+
+</body>
+
+</html>
+
+
+<style is:global>
+
+    @font-face {
+        font-family: 'Heebo';
+        src: url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap') format('truetype-variations');
+        font-weight: 100 1000;
+        font-display: swap;
+    }
+
+    :root {
+        --main-bg-color: snow;
+        --secondary-bg-color: darkblue;
+        --main-font-color: darkblue;
+        font-family: 'Heebo', sans-serif;
+
+        @media (width < 600px) {
+            display: none;
+        }
+
+    }
+
+    html {
+        scroll-behavior: smooth;
+
+    }
+
+    body {
+        width: 100vw !important;
+        background: var(--main-bg-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .grid {
+        display: grid;
+    }
+
+
+    .line {
+        position: absolute;
+        background: var(--main-font-color);
+        z-index: 0;
+        width: 5px;
+        height: 0;
+        left: 50%;
+    }
+
+    .section {
+        height: 100vh;
+    }
+
+</style>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    #background-slogan {
+        font-family: Roboto, sans-serif;
+        font-size: 10rem;
+        font-weight: bold;
+        white-space: nowrap;
+        -webkit-text-stroke: 2px mediumblue;
+        -webkit-text-fill-color: transparent;
+        margin: unset;
+        padding: unset;
+    }
+
+    #background-slogan li:nth-child(1) {
+        transition: all 0.75s cubic-bezier(0.65, 0, 0.35, 1) 0.25s;
+        opacity: 0;
+    }
+
+    #background-slogan li:nth-child(2) {
+        transition: all 0.75s cubic-bezier(0.65, 0, 0.35, 1) 1.25s;
+        opacity: 0;
+    }
+
+    #background-slogan li:nth-child(3) {
+        transition: all 0.75s cubic-bezier(0.65, 0, 0.35, 1) 2.25s;
+        opacity: 0;
+    }
+
+    #background-slogan li:nth-child(4) {
+        transition: all 0.75s cubic-bezier(0.65, 0, 0.35, 1) 3.25s;
+        opacity: 0;
+    }
+
+    #background-slogan li:nth-child(5) {
+        transition: all 0.75s cubic-bezier(0.65, 0, 0.35, 1) 4.25s;
+        opacity: 0;
+    }
+
+    #whitewash {
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) 4.5s;
+        position: absolute;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 250, 250, 0.95);
+        width: 100%;
+        height: 100%;
+    }
+
+    #card {
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.65, 0, 0.35, 1) 5.25s;
+        display: flex;
+        flex-flow: column;
+        background: white;
+        flex: 0 0 75%;
+        box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+        padding: 5%;
+    }
+
+
+    #card-head1 {
+        /*font-size: clamp(2rem, 2vw + 1rem, 10rem);*/
+        color: var(--main-font-color);
+        /*margin: 5% 2.5% 2.5% 2.5%;*/
+        /*padding: 2.5%;*/
+        font-weight: 770;
+        font-size: 400%;
+
+    }
+
+    #card-head2 {
+        /*font-size: clamp(2rem, 2vw + 1rem, 10rem);*/
+        /*color: var(--main-font-color);*/
+        /*margin-top: 2.5%;*/
+        /*padding: 0 5%;*/
+        font-weight: 440;
+        font-size: 225%;
+        padding: 5% 0;
+        line-height: 1.4;
+    }
+
+    #card-head3 {
+        /*align-self: flex-end;*/
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 200%;
+        font-weight: 440;
+        gap: 2.5%;
+        flex: 1 0 max-content;
+        /*padding: 5%;*/
+        /*margin-bottom: 2.5%;*/
+    }
+</style>
+
+<script>
+    // Select all child elements of the parent and set their opacity to "1"
+    Array.from(document.getElementById('background-slogan').children).forEach(child => {
+        child.style.opacity = "1";
+    });
+
+    // Set opacity for specific elements
+    ['whitewash', 'card'].forEach(id => {
+        document.getElementById(id).style.opacity = "1";
+    });
+</script>

@@ -1,0 +1,106 @@
+---
+
+
+---
+
+<div id="section-4" class="section Full">
+
+    <div class="halfFull ">
+        <button class="animated_text" type="button" onclick="window.location.href='#one';">Athletics
+        </button>
+        <img alt="Basketball" class="image" src="./img/13.webp"/>
+    </div>
+
+
+    <div class="halfFull ">
+
+        <button class="animated_text" type="button" onclick="window.location.href='#two';">Football</button>
+
+        <img alt="Basketball" class="image" src="./img/11.webp"/>
+    </div>
+
+
+    <div class="halfFull ">
+
+        <button class="animated_text" type="button" onclick="window.location.href='#three';">Basketball
+        </button>
+
+        <img alt="Basketball" class="image" src="./img/25.webp"/>
+    </div>
+
+
+    <div class="halfFull">
+
+        <button class="animated_text" type="button" onclick="window.location.href='#four';">Skateboarding
+        </button>
+
+        <img alt="Basketball" class="image" src="./img/1.webp"/>
+    </div>
+
+
+</div>
+
+<style>
+    #section-4 {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5%;
+        font-size: 6vmin;
+        font-weight: 770;
+        color: var(--main-font-color);
+        padding: 2.5rem;
+        opacity: 0;
+        animation: none;
+    }
+
+    @keyframes mymove {
+
+        0% {
+            transform: translateX(-150%);
+            opacity: 0;
+            overflow: visible;
+        }
+
+
+        80% {
+            transform: translateX(0%);
+            opacity: 1;
+            overflow: visible;
+        }
+
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+            overflow: scroll;
+        }
+    }
+
+    .halfFull {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .image {
+        object-fit: scale-down;
+        max-width: 26vw;
+        transition: all 0.75s;
+        margin-bottom: 6%;
+    }
+
+    .image:hover {
+        transform: scale(1.1);
+        cursor: none;
+    }
+
+
+    .animated_text {
+        all: unset;
+    }
+
+
+</style>
